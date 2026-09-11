@@ -3,12 +3,10 @@
     en: {
       about: 'About', work: 'Work Experience', projects: 'Projects',
       contact: 'Contact', education: 'Education', skills: 'Skills', languages: 'Languages',
-      footer: 'Generated from JSON Resume.', loading: 'Loading…',
     },
     zh: {
       about: '个人简介', work: '工作经历', projects: '项目经历',
       contact: '联系方式', education: '教育背景', skills: '专业技能', languages: '语言能力',
-      footer: '基于 JSON Resume 生成。', loading: '加载中…',
     },
   };
 
@@ -202,7 +200,6 @@
     root.appendChild(grid);
 
     document.title = data.basics.name + ' — ' + data.basics.label;
-    document.querySelectorAll('[data-i18n="footer-note"]').forEach(function (n) { n.textContent = t.footer; });
   }
 
   var cache = {};

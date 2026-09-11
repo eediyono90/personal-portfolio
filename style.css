@@ -192,13 +192,6 @@ body {
   white-space: nowrap;
 }
 
-.site-footer {
-  text-align: center;
-  font-size: 0.8em;
-  color: #999;
-  padding: 20px 0 40px;
-}
-
 @media print {
   .lang-switch { display: none; }
   body { background: #fff; }
