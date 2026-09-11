@@ -1,0 +1,288 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Ediyono",
+    "label": "Software Engineer",
+    "email": "ediyono88@gmail.com",
+    "phone": "+62 812 8489 8720",
+    "summary": "Software Engineer with 10+ years of experience in end-to-end solution design, development and complex system integration. Proven track record leading multi-national teams across Southeast Asia, building and scaling regional payment systems. Recently applying agentic AI systems to accelerate software delivery and automate development workflows.",
+    "location": {
+      "city": "Jakarta",
+      "countryCode": "ID"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "eediyono90",
+        "url": "https://github.com/eediyono90"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "eediyono",
+        "url": "https://www.linkedin.com/in/eediyono"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Xendit Pte. Ltd.",
+      "position": "Principal Engineer (Consultant)",
+      "location": "Indonesia",
+      "startDate": "2024-11-01",
+      "endDate": "2025-04-30",
+      "highlights": [
+        "Led design and delivery of regional payment products across SEA markets, end to end with product and engineering teams."
+      ]
+    },
+    {
+      "name": "Xendit Pte. Ltd.",
+      "position": "Technical Lead / Engineering Manager",
+      "location": "Indonesia & Singapore",
+      "startDate": "2020-01-01",
+      "endDate": "2023-12-31",
+      "highlights": [
+        "Managed 4 sub-teams (3–5 engineers each, ~16 engineers across ID, MY, SG and PH) building and scaling regional payout products; owned strategy, roadmap and prioritisation with product managers.",
+        "Led payout integrations with regional bank partners, opening new payment channels across Southeast Asia.",
+        "Designed scalable payment architecture for customers' high-volume payout transactions (AWS, Kubernetes, microservices, DDD)."
+      ]
+    },
+    {
+      "name": "Deloitte Digital SEA",
+      "position": "Technical Consultant",
+      "location": "Jakarta, Indonesia",
+      "startDate": "2018-03-01",
+      "endDate": "2019-12-31",
+      "highlights": [
+        "Designed and delivered complex system-integration solutions end to end (Azure, MuleSoft, API Gateway, .NET).",
+        "Coordinated off-shore and on-site teams to complete project deliverables."
+      ]
+    },
+    {
+      "name": "Traveloka",
+      "position": "Enterprise Integration Engineer",
+      "location": "Jakarta, Indonesia",
+      "startDate": "2017-01-01",
+      "endDate": "2018-12-31",
+      "highlights": [
+        "Built and automated integration pipelines between product systems and Finance & Accounting (AWS, Java, Node.js)."
+      ]
+    },
+    {
+      "name": "Accenture",
+      "position": "Software Engineer",
+      "location": "Jakarta, Indonesia",
+      "startDate": "2014-09-01",
+      "endDate": "2017-01-31",
+      "highlights": []
+    }
+  ],
+  "projects": [
+    {
+      "name": "OpenClaw Multi-Agent AI System",
+      "startDate": "2025-05-01",
+      "roles": [
+        "Architect",
+        "Developer"
+      ],
+      "entity": "Independent",
+      "description": "Self-hosted system of 5 specialised Claude agents (architect, programmer, analyst, scout, assistant) that plan, code, review and merge PRs across 6 repos, plus daily automated research digests and financial-report parsing."
+    },
+    {
+      "name": "IDX Financial Dashboard",
+      "startDate": "2025-05-01",
+      "roles": [
+        "Full-stack developer"
+      ],
+      "entity": "Independent",
+      "description": "Interactive dashboard for analysing IDX-listed companies. React, TypeScript, Material-UI, Recharts."
+    },
+    {
+      "name": "IDX Report Ingestion Pipeline",
+      "startDate": "2025-06-01",
+      "roles": [
+        "Architect",
+        "Developer"
+      ],
+      "entity": "Independent",
+      "description": "Job-queued agent pipeline: a Claude analyst agent parses IDX financial-report PDFs into per-period JSON, writes rated analyses (bear/base/bull targets) and daily watchlist news, all feeding the IDX Financial Dashboard via auto-merged PRs."
+    },
+    {
+      "name": "Store Inventory Manager",
+      "startDate": "2025-05-01",
+      "roles": [
+        "Full-stack developer"
+      ],
+      "entity": "Independent",
+      "description": "Multi-location inventory app in production for a retail business. Next.js, TypeScript, Google Sheets, Vercel."
+    },
+    {
+      "name": "Payout Routing Service Re-architecture & Migration",
+      "startDate": "2022-07-01",
+      "endDate": "2023-06-30",
+      "roles": [
+        "Architect",
+        "Backend team lead"
+      ],
+      "entity": "Xendit",
+      "description": "Xendit, architect + backend lead. Redesigned multi-currency routing; new region/currency rollout cut from 2 months to 2 weeks."
+    },
+    {
+      "name": "Payout Partner Integration Re-architecture",
+      "startDate": "2021-10-01",
+      "endDate": "2022-06-30",
+      "roles": [
+        "Architect",
+        "Backend team lead"
+      ],
+      "entity": "Xendit",
+      "description": "Xendit, architect + backend lead. Hybrid-monolith partner integrations; new partner onboarding down from 6–8 to 3–4 weeks."
+    },
+    {
+      "name": "AWS EKS Migration",
+      "startDate": "2021-04-01",
+      "endDate": "2021-09-30",
+      "roles": [
+        "Backend team lead"
+      ],
+      "entity": "Xendit",
+      "description": "Xendit, backend lead. Migrated disbursement microservices EBS/EC2 → EKS: deployment time −80%, infra cost −40%."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Zhejiang University",
+      "area": "Chinese Language Program",
+      "studyType": "Certificate (HSK Level 6)",
+      "startDate": "2024-02-01",
+      "endDate": "2024-07-31"
+    },
+    {
+      "institution": "BINUS University",
+      "area": "Information Technology",
+      "studyType": "Bachelor",
+      "startDate": "2011-01-01",
+      "endDate": "2014-12-31"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Professional Scrum Master I",
+      "issuer": "Scrum.org"
+    },
+    {
+      "name": "MuleSoft Certified Developer",
+      "issuer": "MuleSoft"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": [
+        "Node.js",
+        "Java",
+        "REST API",
+        "Microservices",
+        "Domain-Driven Design"
+      ]
+    },
+    {
+      "name": "Cloud & Infra",
+      "keywords": [
+        "AWS",
+        "Azure",
+        "Docker",
+        "Kubernetes",
+        "Datadog",
+        "Splunk"
+      ]
+    },
+    {
+      "name": "AI Engineering",
+      "keywords": [
+        "Agentic systems",
+        "LLM tooling",
+        "Claude / OpenClaw",
+        "Workflow automation"
+      ]
+    },
+    {
+      "name": "Leadership",
+      "keywords": [
+        "Engineering management",
+        "Roadmap planning",
+        "Team development",
+        "Stakeholder management"
+      ]
+    },
+    {
+      "name": "Certifications",
+      "keywords": [
+        "Professional Scrum Master I (Scrum.org)",
+        "MuleSoft Certified Developer"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Indonesian",
+      "fluency": "Native",
+      "name": "Indonesian"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional",
+      "name": "English"
+    },
+    {
+      "language": "Chinese",
+      "fluency": "Professional (HSK 6)",
+      "name": "Chinese"
+    }
+  ],
+  "_archived_projects": [
+    {
+      "name": "Regional Payouts API",
+      "startDate": "2020-06-01",
+      "endDate": "2021-03-31",
+      "roles": [
+        "Architect",
+        "Backend team lead"
+      ],
+      "entity": "Xendit",
+      "description": "Xendit, Jun 2020 – Mar 2021, architect + backend lead. Built the regional disbursement API supporting multi-currency payouts."
+    },
+    {
+      "name": "Scaling Batch Payouts",
+      "startDate": "2020-01-01",
+      "endDate": "2020-06-30",
+      "roles": [
+        "Architect",
+        "Backend team lead"
+      ],
+      "entity": "Xendit",
+      "description": "Xendit, Jan–Jun 2020, architect + backend lead. Scaled batch payouts to 10x traffic; introduced an internal batch API for multi-payment processing."
+    },
+    {
+      "name": "CRM & ERP Data Integration",
+      "startDate": "2019-01-01",
+      "endDate": "2019-05-31",
+      "roles": [
+        "Backend integration team lead"
+      ],
+      "entity": "Vietnam car manufacturer (via Deloitte)",
+      "description": "Vietnam car manufacturer via Deloitte, Jan–May 2019, integration lead. Designed and built SAP to Salesforce integration on MuleSoft."
+    },
+    {
+      "name": "汉语小二 (Hanyu Xiaoer) Chinese Tutor",
+      "startDate": "2025-05-01",
+      "roles": [
+        "Full-stack developer"
+      ],
+      "entity": "Independent",
+      "description": "AI spoken-Mandarin tutor; Next.js frontend, Node.js WebSocket service for chat, TTS and speech recognition."
+    }
+  ],
+  "meta": {
+    "note": "_archived_projects are not rendered; kept for future use."
+  }
+}
