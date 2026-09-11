@@ -12,6 +12,14 @@
     },
   };
 
+  var SECTION_ICON = {
+    about: 'fa-solid fa-user', work: 'fa-solid fa-briefcase', projects: 'fa-solid fa-code-branch',
+    contact: 'fa-solid fa-bullseye', education: 'fa-solid fa-graduation-cap',
+    skills: 'fa-solid fa-list-check', languages: 'fa-solid fa-language',
+  };
+
+  var NETWORK_ICON = { GitHub: 'fa-brands fa-github', LinkedIn: 'fa-brands fa-linkedin' };
+
   var MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -41,6 +49,10 @@
     });
   }
 
+  function boxHeading(key, t) {
+    return '<i class="' + SECTION_ICON[key] + '"></i> ' + esc(t[key]);
+  }
+
   function render(data, lang) {
     var t = STRINGS[lang];
     var root = document.getElementById('resume');
@@ -50,32 +62,25 @@
     var header = el('div', 'r-header');
     header.appendChild(el('h1', null, esc(data.basics.name)));
     header.appendChild(el('div', 'r-title', esc(data.basics.label)));
-    var contact = el('div', 'r-contact');
-    var loc = data.basics.location && (data.basics.location.city || '');
-    if (loc) contact.appendChild(el('span', null, esc(loc)));
-    if (data.basics.email) contact.appendChild(el('a', null, esc(data.basics.email))).href = 'mailto:' + data.basics.email;
-    if (data.basics.phone) contact.appendChild(el('span', null, esc(data.basics.phone)));
-    (data.basics.profiles || []).forEach(function (p) {
-      var a = el('a', null, esc(p.network) + ': ' + esc(p.username));
-      a.href = p.url; a.target = '_blank'; a.rel = 'noopener';
-      contact.appendChild(a);
-    });
-    header.appendChild(contact);
     header.appendChild(el('hr'));
     root.appendChild(header);
 
-    // About
+    var grid = el('div', 'r-grid');
+    var main = el('div', 'r-main');
+    var sidebar = el('div', 'r-sidebar');
+
+    // About (main)
     if (data.basics.summary) {
       var about = el('div', 'r-box');
-      about.appendChild(el('h2', null, esc(t.about)));
+      about.appendChild(el('h2', null, boxHeading('about', t)));
       about.appendChild(el('p', 'r-summary', esc(data.basics.summary)));
-      root.appendChild(about);
+      main.appendChild(about);
     }
 
-    // Work
+    // Work (main)
     if (data.work && data.work.length) {
       var work = el('div', 'r-box');
-      work.appendChild(el('h2', null, esc(t.work)));
+      work.appendChild(el('h2', null, boxHeading('work', t)));
       data.work.forEach(function (job) {
         var j = el('div', 'r-job');
         var head = el('div', 'r-job-head');
@@ -90,13 +95,13 @@
         }
         work.appendChild(j);
       });
-      root.appendChild(work);
+      main.appendChild(work);
     }
 
-    // Projects
+    // Projects (main)
     if (data.projects && data.projects.length) {
       var proj = el('div', 'r-box r-projects');
-      proj.appendChild(el('h2', null, esc(t.projects)));
+      proj.appendChild(el('h2', null, boxHeading('projects', t)));
       var pul = el('ul');
       data.projects.forEach(function (p) {
         var li = el('li');
@@ -110,13 +115,48 @@
         pul.appendChild(li);
       });
       proj.appendChild(pul);
-      root.appendChild(proj);
+      main.appendChild(proj);
     }
 
-    // Education
+    // Contact (sidebar)
+    var contactBox = el('div', 'r-box');
+    contactBox.appendChild(el('h2', null, boxHeading('contact', t)));
+    var cul = el('ul', 'r-contact-list');
+    var loc = data.basics.location && data.basics.location.city;
+    if (loc) {
+      var li0 = el('li');
+      li0.appendChild(el('span', 'r-contact-icon', '<i class="fa-solid fa-location-dot"></i>'));
+      li0.appendChild(el('span', null, esc(loc)));
+      cul.appendChild(li0);
+    }
+    if (data.basics.phone) {
+      var li1 = el('li');
+      li1.appendChild(el('span', 'r-contact-icon', '<i class="fa-solid fa-phone"></i>'));
+      li1.appendChild(el('span', null, esc(data.basics.phone)));
+      cul.appendChild(li1);
+    }
+    if (data.basics.email) {
+      var li2 = el('li');
+      li2.appendChild(el('span', 'r-contact-icon', '<i class="fa-solid fa-envelope"></i>'));
+      var a2 = el('a', null, esc(data.basics.email)); a2.href = 'mailto:' + data.basics.email;
+      li2.appendChild(a2);
+      cul.appendChild(li2);
+    }
+    (data.basics.profiles || []).forEach(function (p) {
+      var li = el('li');
+      li.appendChild(el('span', 'r-contact-icon', '<i class="' + (NETWORK_ICON[p.network] || 'fa-solid fa-link') + '"></i>'));
+      var a = el('a', null, esc(p.username));
+      a.href = p.url; a.target = '_blank'; a.rel = 'noopener';
+      li.appendChild(a);
+      cul.appendChild(li);
+    });
+    contactBox.appendChild(cul);
+    sidebar.appendChild(contactBox);
+
+    // Education (sidebar)
     if (data.education && data.education.length) {
       var edu = el('div', 'r-box');
-      edu.appendChild(el('h2', null, esc(t.education)));
+      edu.appendChild(el('h2', null, boxHeading('education', t)));
       data.education.forEach(function (e) {
         var item = el('div', 'r-edu-item');
         item.appendChild(el('div', 'r-edu-year', dateRange(e, lang)));
@@ -126,13 +166,13 @@
         item.appendChild(body);
         edu.appendChild(item);
       });
-      root.appendChild(edu);
+      sidebar.appendChild(edu);
     }
 
-    // Skills
+    // Skills (sidebar)
     if (data.skills && data.skills.length) {
       var sk = el('div', 'r-box');
-      sk.appendChild(el('h2', null, esc(t.skills)));
+      sk.appendChild(el('h2', null, boxHeading('skills', t)));
       data.skills.forEach(function (g) {
         var grp = el('div', 'r-skills-group');
         grp.appendChild(el('h4', null, esc(g.name)));
@@ -141,21 +181,25 @@
         });
         sk.appendChild(grp);
       });
-      root.appendChild(sk);
+      sidebar.appendChild(sk);
     }
 
-    // Languages
+    // Languages (sidebar)
     if (data.languages && data.languages.length) {
       var langBox = el('div', 'r-box');
-      langBox.appendChild(el('h2', null, esc(t.languages)));
+      langBox.appendChild(el('h2', null, boxHeading('languages', t)));
       data.languages.forEach(function (l) {
         var row = el('div', 'r-lang-row');
         row.appendChild(el('span', null, esc(l.language)));
         row.appendChild(el('span', 'r-lang-badge', esc(l.fluency)));
         langBox.appendChild(row);
       });
-      root.appendChild(langBox);
+      sidebar.appendChild(langBox);
     }
+
+    grid.appendChild(main);
+    grid.appendChild(sidebar);
+    root.appendChild(grid);
 
     document.title = data.basics.name + ' — ' + data.basics.label;
     document.querySelectorAll('[data-i18n="footer-note"]').forEach(function (n) { n.textContent = t.footer; });

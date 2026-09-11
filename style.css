@@ -5,7 +5,7 @@
   --teal: #227c74;
   --bg-tint: #eef2f6;
   --ink: #2b2b2b;
-  --max-w: 900px;
+  --max-w: 1000px;
 }
 
 * { box-sizing: border-box; }
@@ -50,14 +50,16 @@ body {
   max-width: var(--max-w);
   margin: 24px auto;
   padding: 0 20px 40px;
+  background: #fff;
 }
 
 .loading { text-align: center; color: #888; padding: 60px 0; }
 
+/* Header, full width */
 .r-header { text-align: center; margin-bottom: 24px; }
 .r-header h1 {
   margin: 0;
-  font-size: 2em;
+  font-size: 2.1em;
   font-weight: 800;
   color: var(--navy);
   text-transform: uppercase;
@@ -76,16 +78,13 @@ body {
   background: linear-gradient(to right, var(--teal), var(--navy));
 }
 
-.r-contact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px 18px;
-  margin-top: 10px;
-  font-size: 0.92em;
+/* Two-column grid: main ~70%, sidebar ~30%, like the PDF's kendall layout */
+.r-grid {
+  display: grid;
+  grid-template-columns: 68% 30%;
+  gap: 0 2%;
+  align-items: start;
 }
-.r-contact a { color: var(--navy); text-decoration: none; }
-.r-contact a:hover { text-decoration: underline; }
 
 .r-box { margin-bottom: 20px; }
 .r-box h2 {
@@ -95,9 +94,11 @@ body {
   padding-bottom: 4px;
   border-bottom: 2px solid var(--bg-tint);
 }
+.r-box h2 i { margin-right: 6px; }
 
 .r-summary { margin: 0; }
 
+/* Work experience */
 .r-job { margin-bottom: 12px; }
 .r-job .r-job-head {
   background: var(--bg-tint);
@@ -114,40 +115,81 @@ body {
 .r-job ul { margin: 4px 0 0; padding-left: 20px; }
 .r-job li { margin-bottom: 3px; }
 
+/* Projects */
 .r-projects ul { margin: 0; padding-left: 20px; }
 .r-projects li { margin-bottom: 8px; }
-.r-projects .r-proj-name { font-weight: 700; }
+.r-projects .r-proj-name { font-weight: 700; color: var(--navy); }
 .r-projects .r-proj-link { font-size: 0.85em; margin-left: 6px; }
 
-.r-edu-item { display: flex; gap: 14px; margin-bottom: 10px; }
-.r-edu-year { color: var(--teal); font-weight: 700; white-space: nowrap; min-width: 70px; }
-.r-edu-body h3 { margin: 0; font-size: 1em; }
-.r-edu-body p { margin: 2px 0; font-size: 0.92em; }
+/* Sidebar boxes get a light tint block, like kendall's contact/education panels */
+.r-sidebar .r-box {
+  background: var(--bg-tint);
+  padding: 12px 14px;
+  border-radius: 4px;
+}
 
-.r-skills-group { margin-bottom: 8px; }
-.r-skills-group h4 { margin: 0 0 4px; font-size: 0.95em; color: var(--navy); }
+/* Contact */
+.r-contact-list { list-style: none; margin: 0; padding: 0; }
+.r-contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.92em;
+}
+.r-contact-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 4px;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+}
+.r-contact-list a { color: var(--navy); text-decoration: none; font-weight: 700; word-break: break-all; }
+.r-contact-list a:hover { text-decoration: underline; }
+
+/* Education */
+.r-edu-item { margin-bottom: 12px; }
+.r-edu-item:last-child { margin-bottom: 0; }
+.r-edu-year { color: var(--teal); font-weight: 700; font-size: 0.85em; }
+.r-edu-body h3 { margin: 2px 0 0; font-size: 0.98em; color: var(--navy); }
+.r-edu-body p { margin: 2px 0; font-size: 0.88em; }
+
+/* Skills */
+.r-skills-group { margin-bottom: 10px; }
+.r-skills-group:last-child { margin-bottom: 0; }
+.r-skills-group h4 { margin: 0 0 5px; font-size: 0.92em; color: var(--navy); }
 .r-badge {
   display: inline-block;
   background: var(--navy);
   color: #fff;
-  font-size: 0.78em;
+  font-size: 0.76em;
   padding: 3px 9px;
   border-radius: 3px;
   margin: 2px 3px 2px 0;
 }
 
+/* Languages */
 .r-lang-row {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
   padding: 4px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e2e8ee;
 }
+.r-lang-row:last-child { border-bottom: none; }
 .r-lang-badge {
   background: var(--teal);
   color: #fff;
-  font-size: 0.8em;
+  font-size: 0.78em;
   padding: 2px 8px;
   border-radius: 3px;
+  white-space: nowrap;
 }
 
 .site-footer {
@@ -162,7 +204,8 @@ body {
   body { background: #fff; }
 }
 
-@media (max-width: 600px) {
-  .r-header h1 { font-size: 1.5em; }
+@media (max-width: 720px) {
+  .r-grid { grid-template-columns: 1fr; }
+  .r-header h1 { font-size: 1.6em; }
   .r-job .r-job-head { flex-direction: column; }
 }
