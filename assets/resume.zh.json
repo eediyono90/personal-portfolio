@@ -93,7 +93,8 @@
       "startDate": "2025-05-01",
       "roles": ["全栈开发"],
       "entity": "个人项目",
-      "description": "用于分析印尼证交所（IDX）上市公司的交互式看板。React、TypeScript、Material-UI、Recharts。"
+      "description": "用于分析印尼证交所（IDX）上市公司的交互式看板。React、TypeScript、Material-UI、Recharts。",
+      "url": "https://demo-investment-dashboard.vercel.app/home"
     },
     {
       "name": "IDX 财报数据摄取管道",

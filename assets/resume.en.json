@@ -96,7 +96,8 @@
         "Full-stack developer"
       ],
       "entity": "Independent",
-      "description": "Interactive dashboard for analysing IDX-listed companies. React, TypeScript, Material-UI, Recharts."
+      "description": "Interactive dashboard for analysing IDX-listed companies. React, TypeScript, Material-UI, Recharts.",
+      "url": "https://demo-investment-dashboard.vercel.app/home"
     },
     {
       "name": "IDX Report Ingestion Pipeline",
