@@ -196,7 +196,7 @@ body {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
   @page { margin: 8mm; size: A4; }
   .lang-switch { display: none; }
-  body { background: #fff; font-size: 0.76em; line-height: 1.28; }
+  body { background: #fff; font-size: 0.72em; line-height: 1.28; }
   .resume { margin: 0; max-width: none; padding: 0; }
   .r-header { margin-bottom: 10px; }
   .r-header h1 { font-size: 1.7em; }
