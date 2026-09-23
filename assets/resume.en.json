@@ -2,10 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Ediyono",
-    "label": "Software Engineer",
+    "label": "Senior Software Engineer",
     "email": "ediyono88@gmail.com",
     "phone": "+62 812 8489 8720",
-    "summary": "Software Engineer with 10+ years of experience in end-to-end solution design, development and complex system integration. Proven track record leading multi-national teams across Southeast Asia, building and scaling regional payment systems. Recently applying agentic AI systems to accelerate software delivery and automate development workflows.",
+    "summary": "Software Engineer with 10+ years building payment systems and complex integrations end to end, from architecture and API design to hands-on delivery on AWS and Kubernetes. Grew from Senior Engineer to Tech Lead and Engineering Manager on Xendit's regional payouts platform, then returned to hands-on IC work by choice. Recently building agentic AI systems that plan, code and ship software.",
     "location": {
       "city": "Jakarta",
       "countryCode": "ID"
@@ -36,14 +36,35 @@
     },
     {
       "name": "Xendit Pte. Ltd.",
-      "position": "Technical Lead / Engineering Manager",
+      "position": "Engineering Manager",
       "location": "Indonesia & Singapore",
-      "startDate": "2020-01-01",
+      "startDate": "2022-09-01",
       "endDate": "2023-12-31",
       "highlights": [
-        "Managed 4 sub-teams (3–5 engineers each, ~16 engineers across ID, MY, SG and PH) building and scaling regional payout products; owned strategy, roadmap and prioritisation with product managers.",
-        "Led payout integrations with regional bank partners, opening new payment channels across Southeast Asia.",
-        "Designed scalable payment architecture for customers' high-volume payout transactions (AWS, Kubernetes, microservices, DDD)."
+        "Stayed hands-on as architect of the payout routing re-architecture: redesigned multi-currency routing, cutting new region/currency rollout from 2 months to 2 weeks.",
+        "Led 4 sub-teams (~16 engineers across ID, MY, SG and PH) on regional payout products; owned roadmap and prioritisation with product managers."
+      ]
+    },
+    {
+      "name": "Xendit Pte. Ltd.",
+      "position": "Technical Lead",
+      "location": "Indonesia & Singapore",
+      "startDate": "2020-09-01",
+      "endDate": "2022-08-31",
+      "highlights": [
+        "Designed scalable payment architecture for customers' high-volume payout transactions (AWS, Kubernetes, microservices, DDD).",
+        "Built the regional disbursement API supporting multi-currency payouts.",
+        "Led payout integrations with regional bank partners, opening new payment channels across Southeast Asia."
+      ]
+    },
+    {
+      "name": "Xendit Pte. Ltd.",
+      "position": "Senior Software Engineer",
+      "location": "Indonesia & Singapore",
+      "startDate": "2020-01-01",
+      "endDate": "2020-08-31",
+      "highlights": [
+        "Scaled batch payouts to handle 10x traffic and introduced an internal batch API for multi-payment processing."
       ]
     },
     {
@@ -211,9 +232,7 @@
     {
       "name": "Leadership",
       "keywords": [
-        "Engineering management",
-        "Roadmap planning",
-        "Team development",
+        "Technical leadership",
         "Stakeholder management"
       ]
     },
